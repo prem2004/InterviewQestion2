@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from './component/Home'
+
+
+let obj={
+  id: 1,
+  pid: null,
+  children: [
+      {
+          id: 2,
+          pid: 1,
+          children:[{ id:4, pid:2, children:[{id:6, pid:4}]}]
+      },
+      {id:3, pid:1, children:[{id:5, pid:3}]}
+  ]
+} 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Home obj={obj}/>
     </div>
   );
 }
